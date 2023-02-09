@@ -21,6 +21,34 @@ collage> db.teachers.aggregate([$match:{gender:"male"}])
 ```javascript
 collage> db.teachers.aggregate([$group:{_id:"$age"}])
 ```
+
+```javascript
+
+db.collection.aggregate(
+    [
+        {
+            $addFields: {
+                formattedDate: { // An extra field "formattedDate" is added in each document which can be compared later through pipeline using $match
+                    $dateToString: {
+                        format: "%Y-%m-%d",
+                        date: "$date" // in "$date" date is variable from db
+                    }
+                }
+            }
+        },
+        {
+            $match: {
+                formattedDate: {
+                    $eq: "2020-07-12" // here you can provide your input date yyyy-mm-dd
+                }
+            }
+        }
+    ]
+)
+
+```
+
+
 - The **$group** operator groups documents by the age field, creating a new document for each unique age value.
 - The _id field in the group stage specifies the field based on which the docuemtns will be grouped.
 
