@@ -57,3 +57,23 @@ db.collection.aggregate(
 $group:{_id:expression,field1:expression, field2:expression, ...}
 ```
 
+    MongoDB aggregation is a process in which data is grouped together and transformed into a single, more meaningful data set. It enables users to perform a variety of operations on their data, including filtering, transforming, and summarizing data, as well as creating new virtual fields. Here are some notes on MongoDB aggregation:
+
+Pipelining: MongoDB aggregation uses a pipeline approach, where the input documents are transformed through a series of stages to produce the desired result. Each stage operates on the result set of the previous stage.
+
+Aggregation stages: The most commonly used stages in MongoDB aggregation are $match, $project, $group, $sort, $skip, and $limit.
+
+$match stage: The $match stage is used to filter the input documents based on certain criteria.
+
+$project stage: The $project stage is used to transform the input documents by selecting only the desired fields and reshaping the data.
+
+$group stage: The $group stage is used to group input documents based on a specified expression and produce summary statistics for each group.
+
+$sort stage: The $sort stage is used to sort the documents based on a specified field or expression.
+
+$skip and $limit stages: The $skip stage is used to skip a specified number of documents, while the $limit stage is used to limit the number of documents that are returned.
+
+Aggregation expressions: MongoDB supports a variety of aggregation expressions, such as arithmetic, string, and conditional expressions, that can be used to perform calculations and transformations on the input data.
+
+These are some of the basic concepts of MongoDB aggregation. It is a powerful tool for data analysis and can help you to quickly generate insights from your data.
+
