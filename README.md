@@ -14,6 +14,9 @@
 db.collection.aggregate(pipeline, options)
 ```
 
+- pipeline: array of different operations like first matach by male, then gorup by age, 
+   then sort.
+
 ```javascript
 collage> db.teachers.aggregate([$match:{gender:"male"}])
 ```
