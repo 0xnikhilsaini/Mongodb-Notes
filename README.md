@@ -18,11 +18,11 @@ db.collection.aggregate(pipeline, options)
    then sort.
 
 ```javascript
-collage> db.teachers.aggregate([$match:{gender:"male"}])
+collage> db.teachers.aggregate([{$match:{gender:"male"}}])
 ```
 ## Group teachers by age
 ```javascript
-collage> db.teachers.aggregate([$group:{_id:"$age"}])
+collage> db.teachers.aggregate([{$group:{_id:"$age"}}])
 ```
 
 ```javascript
