@@ -25,6 +25,8 @@ collage> db.teachers.aggregate([{$match:{gender:"male"}}])
 collage> db.teachers.aggregate([{$group:{_id:"$age"}}])
 ```
 
+ db.teachers.aggregate([{$group:{_id:"$age -> this is field in collection"}}])
+
 ```javascript
 
 db.collection.aggregate(
@@ -59,6 +61,12 @@ db.collection.aggregate(
 ```javascript
 $group:{_id:expression,field1:expression, field2:expression, ...}
 ```
+
+```javascript
+db.teachers.aggregate([{$group:{_id:"$age", names:{$push:"$name"}}}])
+```
+
+The names field uses the $push operator to add the name field from each document in the group to an array.
 
     MongoDB aggregation is a process in which data is grouped together and transformed into a single, more meaningful data set. It enables users to perform a variety of operations on their data, including filtering, transforming, and summarizing data, as well as creating new virtual fields. Here are some notes on MongoDB aggregation:
 
